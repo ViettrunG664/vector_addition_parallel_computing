@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "name": "Win32 CUDA", // Đổi tên cho dễ nhận biết
+            "includePath": [
+                "${workspaceFolder}/**",
+                // *** THÊM DÒNG NÀY: Đường dẫn tới thư mục include của CUDA Toolkit ***
+                "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/include/**",
+                "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/include"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "__CUDACC__",
+                "__NVCC__"
+            ],
+            // *** THAY ĐỔI DÒNG NÀY: Chỉ định nvcc làm compiler chính cho IntelliSense ***
+            // Điều này giúp VS Code hiểu cú pháp CUDA tốt hơn
+            "windowsSdkVersion": "10.0.22621.0",
+            "compilerPath": "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/bin/nvcc.exe",
+            "cStandard": "c17",
+            // nvcc thường hỗ trợ tốt C++14 hoặc C++17
+            "cppStandard": "c++17", // Có thể để "c++14" nếu code của bạn yêu cầu
+            // *** THAY ĐỔI DÒNG NÀY: Chế độ IntelliSense ***
+            // Mặc dù compiler là nvcc, nhưng trên Windows nó thường dùng toolchain MSVC làm backend.
+            // Chế độ "windows-msvc-x64" thường hoạt động tốt nhất cho CUDA trên Windows.
+            "intelliSenseMode": "windows-msvc-x64"
+        }
+    ],
+    "version": 4
+}
